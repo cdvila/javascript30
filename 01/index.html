@@ -4,18 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Pruebas DrumKit</title>
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <title>Mario DrumKit | #Javascript30 </title>
 </head>
 <body>
-    <h1>DrumKit</h1>
+    <h1>Mario DrumKit</h1>
     <div class="contenedorTeclas">
-        <div class="tecla 97" keyCode="97">A = Mario</div>
-        <div class="tecla 115" keyCode="115">S = Boing</div>
-        <div class="tecla 100" keyCode="100">D = Corcho</div>
+        <div class="tecla a" keyCode="a" onclick="usarTecla('a')"><kbd>A</kbd><span>THEME</span></div>
+        <div class="tecla s" keyCode="s" onclick="usarTecla('s')"><kbd>S</kbd><span>SALTO</span></div>
+        <div class="tecla d" keyCode="d" onclick="usarTecla('d')"><kbd>D</kbd><span>ENEMIGO</span></div>
+        <div class="tecla f" keyCode="f" onclick="usarTecla('f')"><kbd>F</kbd><span>TUBERIA</span></div>
+        <div class="tecla g" keyCode="g" onclick="usarTecla('g')"><kbd>G</kbd><span>MONEDA</span></div>
+        <div class="tecla h" keyCode="h" onclick="usarTecla('h')"><kbd>H</kbd><span>VIDA</span></div>
+        <div class="tecla j" keyCode="h" onclick="usarTecla('j')"><kbd>J</kbd><span>GOVER</span></div>
     </div>
-    <audio id="audio97" src="sounds/mario-bros-jump.mp3"></audio>
-    <audio id="audio115" src="sounds/boing.mp3"></audio>
-    <audio id="audio100" src="sounds/corcho.mp3"></audio>
+    <audio id="audio a" src="sounds/mb_groundtheme.mp3"></audio>
+    <audio id="audio s" src="sounds/mario-bros-jump.mp3"></audio>
+    <audio id="audio d" src="sounds/mb_enemigo.mp3"></audio>
+    <audio id="audio f" src="sounds/mb_tuberia.mp3"></audio>
+    <audio id="audio g" src="sounds/mb_moneda.mp3"></audio>
+    <audio id="audio h" src="sounds/mb_vida.mp3"></audio>
+    <audio id="audio j" src="sounds/mb_gameover.mp3"></audio>
+
+    
     
 <script src="app.js"></script>
 </body>
