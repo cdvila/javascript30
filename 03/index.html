@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <style>
+        :root{
+            --widthForma: 100px;
+            --heightForma: 100px;
+            --colorBase: #ffc600;
+            --borderForma: 0%;
+        }
+        body{
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #162e3f;
+            color: white;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .controles{
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #forma{
+            margin: 50px;
+            width: var(--widthForma);
+            height: var(--heightForma);
+            background-color: var(--colorBase);
+            border-radius: var(--borderForma);
+        }
+        h1 span{
+            color: var(--colorBase)
+        }
+        label{
+            margin-top: 20px;
+        }
+    </style>
+    <title>FORMAS</title>
+</head>
+<body>
+    <h1>FORMAS ACTUALIZADAS CON <span>JS</span></h1>
+
+    <div class="controles">
+
+        <label for="widthForma">Width: <span class="span-widthForma">100px</span></label>
+        <input type="range" name="widthForma" min="10" max="400" value="100" data-sizing="px">
+
+        <label for="heightForma">Height: <span class="span-heightForma">100px</span></label>
+        <input type="range" name="heightForma" min="10" max="500" value="100" data-sizing="px">
+
+        <label for="borderForma">Border Radius: <span class="span-borderForma">0%</span></label>
+        <input type="range" name="borderForma" min="0" max="50" value="0" data-sizing="%">
+
+        <label for="colorBase">Color: <span class="span-colorBase">#ffc600</span></label>
+        <input id="colorPaleta" type="color" name="colorBase" value="#ffc600">
+
+    </div>
+    
+    <div id="forma"></div>
+
+ 
+    <script>
+        const controles = document.querySelectorAll(".controles input")
+        const colorPaleta = document.getElementById("colorPaleta");
+        
+
+        function manejadorControles(){
+            const sufijo = this.dataset.sizing || "";
+            document.documentElement.style.setProperty(`--${this.name}`, `${this.value}`+ sufijo)
+            const label = document.querySelector(`.span-${this.name}`);
+
+            
+            label.innerHTML = this.value + sufijo
+            console.log(label)
+        }
+        
+        colorPaleta.addEventListener("input",  manejadorControles)
+        controles.forEach(control => control.addEventListener('change', manejadorControles, false))
+        controles.forEach(control => control.addEventListener('mousemove', manejadorControles, false))
+    </script>
+</body>
+</html>
