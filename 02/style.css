@@ -1,0 +1,79 @@
+*{
+    margin: 0px;
+    padding: 0px;
+
+}
+body{
+    background-image: url("fondo.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    background-color: antiquewhite;
+    flex-direction: column;
+    text-align: center;
+}
+
+#reloj{
+    border: 10px solid white;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 50px auto;
+    background-color: rgba(255, 255, 255, 0.8);
+    background-image: url('relojFondo.png');
+background-size: contain;
+
+}
+.relojEstructura{
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+
+transform: translateY(-3px)
+
+}
+.mano{
+    width: 50%;
+    height: 6px;
+    top: 50%;
+    position: absolute;
+    transform-origin: 100%;
+    transform: rotate(90deg);
+    transition: all 0.05s;
+    transition-timing-function: cubic-bezier(0.1,2.7,0.58,1);
+
+}
+.horas{
+    background-image: url('horas.png');
+    background-size: cover;
+
+}
+.minutos{
+
+    background-image: url('minutero.png');
+    background-size: cover;
+
+}
+.segundos{
+   
+    background-image: url('segundero.png');
+    background-size: cover;
+
+}
+.puntoCentral{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: black;
+    position: absolute;
+    z-index: 10;
+
+}
